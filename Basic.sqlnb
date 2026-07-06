@@ -1,0 +1,192 @@
+cells:
+  - kind: 2
+    value: "-- create\r
+
+      CREATE TABLE EMPLOYEE (\r
+
+      \  empId NUMBER,\r
+
+      \  name VARCHAR2(15),\r
+
+      \  dept VARCHAR2(10)\r
+
+      );\r\n"
+    languageId: oracle-sql
+  - kind: 2
+    value: "--insert\r
+
+      INSERT  INTO EMPLOYEE VALUES (1, 'Clark', 'Sales'),\r
+
+      \                            (4, 'Dave', 'Accounting'),\r
+
+      \                            (2, 'Ava', 'Sales'),\r
+
+      \                             (3, 'ram', 'sales');\r\n"
+    languageId: oracle-sql
+  - kind: 2
+    value: "INSERT ALL\r
+
+      \  INTO EMPLOYEE VALUES (1, 'Clark', 'Sales')\r
+
+      \  INTO EMPLOYEE VALUES (4, 'Dave', 'Accounting')\r
+
+      \  INTO EMPLOYEE VALUES (2, 'Ava', 'Sales')\r
+
+      \  INTO EMPLOYEE VALUES (3, 'ram', 'sales')\r
+
+      SELECT * FROM DUAL;"
+    languageId: oracle-sql
+  - kind: 2
+    value: SELECT * from EMPLOYEE;
+    languageId: oracle-sql
+  - kind: 2
+    value: select EMPID, name from employee;
+    languageId: oracle-sql
+  - kind: 2
+    value: SELECT EMPID,name FROM EMPLOYEE FETCH first 1 ROW only;
+    languageId: oracle-sql
+  - kind: 2
+    value: "-- display emo data whose id>2\r
+
+      select * from employee  where empid >=2;"
+    languageId: oracle-sql
+  - kind: 2
+    value: "--display sales dept emp data\r
+
+      select * from employee where lower(dept) ='sales';\r
+
+      --select * from employee where name ='ram';\r\n"
+    languageId: oracle-sql
+  - kind: 2
+    value: "-- disaply sales dept emp count\r
+
+      select count(*) sales_count FROM EMPLOYEE where lower(dept)='sales';\r\n"
+    languageId: oracle-sql
+  - kind: 2
+    value: "-- display dept wise emp count\r
+
+      \r
+
+      select dept, count(*) as emp_count from employee group by dept;"
+    languageId: oracle-sql
+  - kind: 2
+    value: select  dept, count(*) as emp_count  from employee group by lower(dept);
+    languageId: oracle-sql
+  - kind: 2
+    value: select  lower(dept), count(*) as emp_count  from employee group by
+      lower(dept);
+    languageId: oracle-sql
+  - kind: 2
+    value: "--min, max, avg, count, sum\r
+
+      \r
+
+      CREATE TABLE employees (\r
+
+      \    emp_name VARCHAR2(15),\r
+
+      \    dept     VARCHAR2(10),\r
+
+      \    city     VARCHAR2(13),\r
+
+      \    salary   NUMBER(10, 2)\r
+
+      );\r\n"
+    languageId: oracle-sql
+  - kind: 2
+    value: "INSERT ALL\r
+
+      \    INTO employees VALUES ('John Doe', 'HR', 'New York', 65000.00)\r
+
+      \    INTO employees VALUES ('Jane Smith', 'IT', 'San Francisco',
+      95000.00)\r
+
+      \    INTO employees VALUES ('Bob Johnson', 'Finance', 'Chicago',
+      85000.00)\r
+
+      \    INTO employees VALUES ('Alice Williams', 'Marketing', 'Austin',
+      70000.00)\r
+
+      \    INTO employees VALUES ('Charlie Brown', 'IT', 'Seattle', 105000.00)\r
+
+      \    INTO employees VALUES ('Emily Davis', 'HR', 'Miami', 62000.00)\r
+
+      \    INTO employees VALUES ('Frank Miller', 'Finance', 'New York',
+      90000.00)\r
+
+      \    INTO employees VALUES ('Grace Wilson', 'Sales', 'Los Angeles',
+      75000.00)\r
+
+      \    INTO employees VALUES ('Henry Moore', 'Marketing', 'Chicago',
+      72000.00)\r
+
+      \    INTO employees VALUES ('Ivy Taylor', 'IT', 'Boston', 98000.00)\r
+
+      \    INTO employees VALUES ('Jack Anderson', 'Sales', 'Dallas',
+      68000.00)\r
+
+      \    INTO employees VALUES ('Kate Thomas', 'Finance', 'San Francisco',
+      11000.00)\r
+
+      \    INTO employees VALUES ('Leo Jackson', 'HR', 'Atlanta', 64000.00)\r
+
+      \    INTO employees VALUES ('Mia White', 'IT', 'Denver', 89000.00)\r
+
+      \    INTO employees VALUES ('Nathan Harris', 'Marketing', 'New York',
+      78000.00)\r
+
+      \    INTO employees VALUES ('Olivia Martin', 'Sales', 'Phoenix',
+      67000.00)\r
+
+      \    INTO employees VALUES ('Paul Clark', 'Finance', 'Seattle',
+      92000.00)\r
+
+      \    INTO employees VALUES ('Quinn Lewis', 'IT', 'Austin', 102000.00)\r
+
+      \    INTO employees VALUES ('Rachel Young', 'HR', 'Chicago', 66000.00)\r
+
+      \    INTO employees VALUES ('Sam King', 'Sales', 'Detroit', 71000.00)\r
+
+      SELECT * FROM dual;"
+    languageId: oracle-sql
+  - kind: 2
+    value: select * from employees;
+    languageId: oracle-sql
+  - kind: 2
+    value: "-- display emp count dept wise\r
+
+      select dept,  count(*) emp_count from employees group by dept;"
+    languageId: oracle-sql
+  - kind: 2
+    value: "--display city wise emp count\r
+
+      select city, count(*) as emp_count from employees group by city;\r\n"
+    languageId: oracle-sql
+  - kind: 2
+    value: "-- display dept wise min salary and max salary\r
+
+      select dept, min(salary) as min_salary, max(salary) max_salary from
+      employees group by dept;\r\n"
+    languageId: oracle-sql
+  - kind: 2
+    value: "-- dispaly total row count\r
+
+      select count(*) from employees;"
+    languageId: oracle-sql
+  - kind: 2
+    value: "-- dispaly dept count(count of unique depts)\r
+
+      select count(distinct dept)  from employees;"
+    languageId: oracle-sql
+  - kind: 2
+    value: "-- display dept wise head count, min salary, max salary, avg salary,
+      total salary\r
+
+      select dept, count(*) as emp_count, \r
+
+      min(salary) as min_salary, max(salary) max_salary,\r
+
+      avg(salary) as avg_salary , sum(salary) as total_salary\r
+
+      from employees group by dept;"
+    languageId: oracle-sql
